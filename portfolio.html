@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Haritha D">
+    <meta name="description" content="Haritha D's  portfolio">
+    <title>Haritha D | Resume & Portfolio</title>
+     <link rel="icon" type="image/x-icon" href="images.png">
+    <style>
+        /* ---------- 1. PAGE SETTINGS ---------- */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        body{
+            font-family: "Inter", sans-serif;
+            line-height: 1.6;
+            color: #30394d;
+            background-color: #f7f5f0;
+            margin: 0;
+        }
+
+       
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ---------- 2. TOP NAVIGATION ---------- */
+        .topbar {
+            background-color: #202a44;
+            color: #ffffff;
+            padding: 16px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .topbar nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .topbar nav a {
+            color: #e9edf7;
+            font-size: 0.9rem;
+        }
+
+        .topbar nav a:hover {
+            color: #ffc857;
+        }
+
+        /* ---------- 3. MAIN RESUME CARD ---------- */
+        .resume {
+            max-width: 1100px;
+            margin: 36px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background-color: #ffffff;
+            border-radius: 22px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;;
+            box-shadow: 0 14px 35px rgba(32, 42, 68, 0.10);
+        }
+
+        .hero-text {
+            padding: 48px;
+        }
+
+        .eyebrow {
+            color: #a45b20;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin: 12px 0 4px;
+            color: #202a44;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.1;
+        }
+
+        .role {
+            font-size: 1.15rem;
+            color: #586174;
+            margin-top: 10px;
+        }
+
+        .intro {
+            max-width: 620px;
+            margin: 22px 0;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 17px;
+            border-radius: 8px;
+            background-color: #202a44;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .button.secondary {
+            background-color: #fff3d5;
+            color: #202a44;
+            border: 1px solid #f0d79a;
+        }
+
+        .hero-side {
+            background-color: #e9e4da;
+            padding: 38px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            border: 5px solid #ffffff;
+            background-color: #202a44;
+            color: #ffc857;
+            display: grid;
+            place-items: center;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .hero-side p {
+            margin: 5px 0;
+        }
+
+        .availability {
+            display: inline-block;
+            background-color: #dcefe3;
+            color: #23613b;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        /* ---------- 4. CONTENT LAYOUT ---------- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 22px;
+            margin-top: 22px;
+        }
+
+        .column {
+            display: grid;
+            align-content: start;
+            gap: 22px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(32, 42, 68, 0.06);
+        }
+
+        .section-title {
+            color: #202a44;
+            font-size: 1.25rem;
+            margin: 0 0 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title span {
+            color: #a45b20;
+            font-size: 0.8rem;
+        }
+
+        .muted {
+            color: #687184;
+        }
+
+        /* ---------- 5. SKILLS ---------- */
+        .skill-group {
+            margin-bottom: 20px;
+        }
+
+        .skill-group h3 {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 10px;
+            background-color: #f0eee9;
+            color: #30394d;
+            border-radius: 7px;
+            font-size: 0.85rem;
+        }
+
+        /* ---------- 6. EXPERIENCE TIMELINE ---------- */
+        .timeline-item {
+            border-left: 2px solid #e5bd68;
+            padding: 0 0 22px 18px;
+            margin-left: 5px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #a45b20;
+            position: absolute;
+            left: -6px;
+            top: 5px;
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .timeline-item p {
+            margin: 5px 0;
+        }
+
+        .date {
+            color: #a45b20;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* ---------- 7. PROJECTS ---------- */
+        .project {
+            padding: 16px 0;
+            border-top: 1px solid #ece9e2;
+        }
+
+        .project:first-of-type {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .project h3 {
+            margin: 0 0 6px;
+            color: #202a44;
+        }
+
+        .project p {
+            margin: 5px 0;
+        }
+
+        details {
+            margin-top: 10px;
+            background-color: #f7f5f0;
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #7c451b;
+        }
+
+       
+
+        .contact-list {
+            padding-left: 18px;
+            margin-bottom: 0;
+        }
+
+        .contact-list li {
+            margin: 8px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-list a {
+            color: #8a4a1d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+       
+       .education-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .education-table th,
+        .education-table td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+
+        
+
+
+
+      
+    </style>
+</head>
+
+<body id="top">
+
+    <header class="topbar">
+        <a class="brand" href="#top">PORTFOLIO</a>
+
+        <nav aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="resume">
+
+        <section class="hero" id="about">
+            <div class="hero-text">
+                <p class="eyebrow">Computer Science & Engineering</p>
+
+                <h1>Haritha D</h1>
+
+                <p class="role">Developer in progress. Problem solver by nature.</p>
+
+                <p class="intro">
+                    I'm a Computer Science student interested in building useful
+                    digital products, exploring data, and creating thoughtful
+                    user experiences. I enjoy learning by building and improving
+                    one project at a time.
+                </p>
+
+                <div class="hero-links">
+                    <a class="button" href="#projects">Explore my work </a>
+                    <a class="button secondary" href="mailto:harithad2606@gmail.com">Contact me </a>
+                </div>
+            </div>
+        </section>
+
+        <br>
+
+            <div class="column">
+
+                <section class="card" id="skills">
+                    <h2 class="section-title"><span>01</span> Skills & Tools</h2>
+
+                    <div class="skill-group">
+                        <h3>Programming & Web</h3>
+                        <div class="tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">C</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">SQL</span>
+                          
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Tools</h3>
+                        <div class="tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Excel</span>
+                            <span class="tag">Qlik Sense</span>
+                            <span class="tag">Supabase</span>
+                            <span class="tag">Canva</span>
+                        </div>
+                    </div>
+
+                    
+                </section>
+
+                
+            <section class="card">
+                <h2 class="section-title"><span>02</span> Education</h2>
+                <table class="education-table">
+                    <thead>
+                        <tr>
+                            <th>Qualification</th>
+                            <th>Institution</th>
+                            <th>Year</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>B.E. Computer Science and Engineering</td>
+                        <td>SA Engineering College</td>
+                        <td>2023 – 2027</td>
+                        <td>CGPA: 7.88</td>
+                    </tr>
+                    <tr>
+                        <td>Higher Secondary Education</td>
+                        <td>St. Joseph Matriculation Higher Secondary School</td>
+                        <td>2022 – 2023</td>
+                        <td>76% </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+                <section class="card">
+                    <h2 class="section-title"><span>03</span> Certifications</h2>
+                    <ul>
+                        <li>Megathil — AI Powered Interview Preparation Program</li>
+                        <li>Corizo Certified: AI Intern</li>
+                        <li>NPTEL — Programming in Java</li>
+                        <li>Pearson Mepro Level 10 </li>
+                    </ul>
+                </section>
+
+              
+
+            </div>
+            <br>
+            <div class="column">
+
+                <section class="card" id="experience">
+                    <h2 class="section-title"><span>05</span> Experience</h2>
+
+                    <article class="timeline-item">
+                        <p class="date">OCT 2025 – PRESENT</p>
+                        <h3>Software Development Intern</h3>
+                        <p><strong>Welbuilt AI Solutions</strong></p>
+                        <p class="muted">
+                            Worked on web applications, dashboards,
+                            authentication and database integration.
+                        </p>
+                        <details>
+                            <summary>Summary</summary>
+                            <ul>
+                                <li>Built an Intern Progress Tracker using React.js.</li>
+                                <li>Integrated Supabase for authentication and data storage.</li>
+                                <li>Worked on a Field Force Tracker using Next.js and TypeScript.</li>
+                                <li>Improved a responsive travel website.</li>
+                            </ul>
+                        </details>
+                    </article>
+
+                    <article class="timeline-item">
+                        <p class="date">JAN – FEB 2025</p>
+                        <h3>Data Analyst Intern</h3>
+                        <p><strong>Hyundai Motor India Limited</strong></p>
+                        <p class="muted">
+                            Explored production data, manufacturing workflows,
+                            Python and SQL in a digital manufacturing environment.
+                        </p>
+                    </article>
+                </section>
+
+                <section class="card" id="projects">
+                    <h2 class="section-title"><span>06</span> Selected Projects</h2>
+
+                    <article class="project">
+                        <h3>01 / FragranceFlow</h3>
+                        <p class="muted">Perfume insights & UI/UX</p>
+                        <p>
+                            Designed a Figma prototype and a Power BI dashboard
+                            to explore perfume sales and marketing insights.
+                        </p>
+                        <details>
+                            <summary>Project snapshot</summary>
+                            <p>Focus areas: data visualisation, dashboard design and user experience.</p>
+                        </details>
+                    </article>
+
+                    <article class="project">
+                        <h3>02 / Field Force Tracker</h3>
+                        <p class="muted">SaaS web application</p>
+                        <p>
+                            A field-force management platform with Admin and
+                            Agent dashboards, farmer management, lead tracking,
+                            visit logging and follow-up scheduling.
+                        </p>
+                        <details>
+                            <summary>Project snapshot</summary>
+                            <p>Technologies used included Next.js, React, TypeScript and Tailwind CSS.</p>
+                        </details>
+                    </article>
+
+                    <article class="project">
+                        <h3>03 / Nithyeshwar Tours</h3>
+                        <p class="muted">Responsive travel website</p>
+                        <p>
+                            Worked on destination pages, navigation, layouts
+                            and user experience for a travel website.
+                        </p>
+                    </article>
+
+                    <article class="project">
+                        <h3>04 / Block Bank Management System</h3>
+                        <p class="muted">Banking application</p>
+                        <p>
+                            A project covering account creation, deposits,
+                            withdrawals and SQL data storage.
+                        </p>
+                    </article>
+                </section>
+
+                <section class="card">
+                    <h2 class="section-title"><span>07</span> Highlights</h2>
+                    <ul>
+                        <li>Winner at DEXTERO'26, a national-level technical symposium.</li>
+                        <li>First place for RightReach, a blockchain-based ration distribution system.</li>
+                    </ul>
+                </section>
+                  <section class="card" id="contact">
+                    <h2 class="section-title"><span>04</span> Let's Connect</h2>
+                    <p>Have an idea, opportunity, or project to discuss?</p>
+
+                    <ul class="contact-list">
+                        <li><a href="mailto:harithad2606@gmail.com">Email me</a></li>
+                        <li><a href="https://www.linkedin.com/in/haritha-devanathan/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></li>
+                        <li><a href="https://github.com/harithad-26" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+
+    </main>
+
+   
+
+</body>
+</html>
