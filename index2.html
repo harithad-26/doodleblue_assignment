@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create an account with the Creative Club registration form.">
+    <title>Join the JD Club</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: #243047;
+            background: #f2f4ff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 48px 20px;
+            display: grid;
+            place-items: center;
+            background: gradient(120deg, #5146c8, #8767e8 65%, #ba74d5);           
+        }
+
+        .registration-card {
+            width: min(100%, 760px);
+            overflow: hidden;
+            border: 1px solid #e8e9f5;
+            border-radius: 24px;
+            background: #fff;
+           
+        }
+
+        .card-heading {
+            padding: 38px 48px 34px;
+            color: #fff;
+            background: linear-gradient(120deg, #5146c8, #8767e8 65%, #ba74d5);
+        }
+
+        .eyebrow {
+            margin: 0 0 10px;
+            color: #e7e2ff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            letter-spacing: -0.04em;
+        }
+
+        .intro {
+            max-width: 500px;
+            margin: 12px 0 0;
+            color: #f0edff;
+            line-height: 1.6;
+        }
+
+        form {
+            padding: 34px 48px 42px;
+        }
+
+        fieldset {
+            min-width: 0;
+            margin: 0 0 28px;
+            padding: 0;
+            border: 0;
+        }
+
+        legend {
+            margin-bottom: 18px;
+            color: #5146c8;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px 20px;
+        }
+
+        .field {
+            display: grid;
+            gap: 8px;
+        }
+
+        .field label {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .field input,
+        .field select {
+            width: 100%;
+            min-height: 48px;
+            padding: 11px 13px;
+            border: 1px solid #d9ddeb;
+            border-radius: 10px;
+            outline: none;
+            background: #fbfbfe;
+            color: #243047;
+            font: inherit;
+            transition: border-color 160ms ease, box-shadow 160ms ease;
+        }
+
+        .field input:focus,
+        .field select:focus {
+            border-color: #7162da;
+            box-shadow: 0 0 0 3px rgb(113 98 218 / 16%);
+        }
+
+        .choice-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 22px;
+            margin-top: 12px;
+        }
+
+        .choice {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #47516a;
+            font-size: 0.92rem;
+        }
+
+        .choice input {
+            accent-color: #6557d2;
+        }
+
+        .form-note {
+            margin: -5px 0 22px;
+            color: #68728a;
+            font-size: 0.84rem;
+            line-height: 1.5;
+        }
+
+        .terms {
+            margin-bottom: 22px;
+        }
+
+        button {
+            width: 100%;
+            min-height: 52px;
+            border: 0;
+            border-radius: 11px;
+            background: linear-gradient(100deg, #5146c8, #8563df);
+            color: #fff;
+            cursor: pointer;
+            font: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: transform 160ms ease, box-shadow 160ms ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgb(81 70 200 / 24%);
+        }
+
+        button:focus-visible {
+            outline: 3px solid #f0a85d;
+            outline-offset: 3px;
+        }
+
+        .sign-in {
+            margin: 20px 0 0;
+            color: #68728a;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .card-heading {
+                padding: 30px 24px;
+            }
+
+            form {
+                padding: 28px 24px 32px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="registration-card">
+        <header class="card-heading">
+
+            <h1>Join the JD Club</h1>
+            <p class="intro">Sign up to meet curious people, explore new ideas, and make your next big thing.</p>
+        </header>
+
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Your details</legend>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="first-name">First name</label>
+                        <input type="text" id="first-name" name="first-name" autocomplete="given-name" placeholder="e.g. Alex" required>
+                    </div>
+                    <div class="field">
+                        <label for="last-name">Last name</label>
+                        <input type="text" id="last-name" name="last-name" autocomplete="family-name" placeholder="e.g. Morgan" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" name="email" autocomplete="email" placeholder="alex@example.com" required>
+                    </div>
+                    <div class="field">
+                        <label for="birthday">Date of birth</label>
+                        <input type="date" id="birthday" name="birthday" autocomplete="bday">
+                    </div>
+                    <div class="field">
+                        <label for="password">Create a password</label>
+                        <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required>
+                    </div>
+                    <div class="field">
+                        <label for="interest">I'm most interested in</label>
+                        <select id="interest" name="interest" required>
+                            <option value="" disabled selected>Choose an interest</option>
+                            <option value="design">Design & illustration</option>
+                            <option value="writing">Writing & storytelling</option>
+                            <option value="technology">Technology & making</option>
+                            <option value="photography">Photography & film</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>How did you find us?</legend>
+                <div class="choice-row">
+                    <label class="choice"><input type="radio" name="referral" value="friend" required> A friend</label>
+                    <label class="choice"><input type="radio" name="referral" value="social"> Social media</label>
+                    <label class="choice"><input type="radio" name="referral" value="other"> Somewhere else</label>
+                </div>
+            </fieldset>
+
+            <p class="form-note">We’ll only use your details to set up your membership and send club updates you choose to receive.</p>
+
+            <div class="choice terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the membership terms and privacy policy.</label>
+            </div>
+
+            <button type="submit">Create my account</button>
+            <p class="sign-in">Already a member? Sign in to your account.</p>
+        </form>
+    </main>
+</body>
+</html>
